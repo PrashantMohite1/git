@@ -1,0 +1,24 @@
+
+
+
+                                    ------> release-1.0.x
+                                   |------> release-1.1x
+feature--> develop --> release ----|------> release-2.0 
+             ^                      |------> release-3.0  ---> found bugs --------|
+             |                                                                    |
+             |<------------------------------------------hotfix branch   ---------|         
+
+
+all feature branches will merge into develop then we cut develop (means create new branch from it called release branch) then we deploy that creatd release branch 
+
+if we found any bugs in release branch then we can rolled backed to previous release branch and to for fixing the bugs of release branches we create hotfix branch
+
+**** scenario to understand relation between develop,release, hotfix.  *****************************
+  let say we found bugs release-branch-1.1x then we roll back to previouse release-branch-1.0x
+  then we create a hot fix branch from release-branch-1.1x and after fixing all bugs from it we merge it into release-branch-1.1x and will deploy it on dev and demo env after that
+  if everything fines then only merge it into develop
+
+
+
+reference documentation -: https://www.gitkraken.com/learn/git/best-practices/git-branch-strategy 
+                           https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow
